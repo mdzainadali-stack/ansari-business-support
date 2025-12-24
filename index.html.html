@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ansari Business Support — Accounting & AI Digital Support</title>
+
+  <!-- Google Font: Inter (modern sans-serif) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root{
+      --blue-1: #0a66d1;
+      --blue-2: #063b6b;
+      --card-bg: #ffffff;
+      --muted: #6b7280;
+      --border: #e6e9ef;
+      --soft-shadow: 0 8px 22px rgba(12, 40, 80, 0.06);
+      --soft-shadow-2: 0 4px 12px rgba(12, 40, 80, 0.05);
+      --radius: 12px;
+      --max-width: 1200px;
+      --whatsapp: #25D366;
+      --text-dark: #0f1724;
+    }
+
+    /* Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html,body { height: 100%; }
+    body{
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      background: #f7f9fc;
+      color: var(--text-dark);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.45;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .page{
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* =====================
+       Hero: background image + dark overlay
+       ===================== */
+    .hero-wrap{
+      /* Dark blue overlay on top of AI-generated placeholder background image */
+      background:
+        linear-gradient(rgba(6,59,107,0.56), rgba(6,59,107,0.56)),
+        url('https://placehold.co/1600x900/dae8ff/0b2f4a/png?text=AI%20Generated%20Corporate%20Office%20Background');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      padding: 64px 20px;
+      margin-bottom: 28px;
+    }
+
+    .hero{
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 18px;
+      padding: 18px;
+    }
+
+    .hero .title{ text-align:center; }
+    .hero h1{
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
+      margin-bottom: 8px;
+      line-height: 1.05;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .hero p.lead{
+      font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 6px;
+    }
+
+    .hero p.small{ color: rgba(255,255,255,0.85); font-size: 0.95rem; }
+
+    .hero .cta{
+      margin-top: 12px;
+      display:flex;
+      justify-content:center;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:12px 18px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      font-size:0.98rem;
+      border: none;
+      cursor:pointer;
+    }
+
+    .btn-contact{
+      background: #ffffff;
+      color: var(--blue-2);
+      padding: 12px 20px;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(11, 52, 119, 0.12);
+    }
+
+    .btn-secondary{
+      background: transparent;
+      color: rgba(255,255,255,0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 10px 16px;
+      border-radius: 10px;
+    }
+
+    /* =====================
+       Section common (unchanged layout/colors)
+       ===================== */
+    section { background: transparent; margin-bottom: 28px; }
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 26px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .section-head{ text-align:center; margin-bottom:20px; }
+    .section-head h2{ font-size:1.2rem; color: var(--blue-2); margin-bottom:6px; font-weight:700; }
+    .section-head p{ color: var(--muted); font-size:0.95rem; margin:0; }
+
+    .divider{ height:1px; background: var(--border); margin: 22px 0; border-radius:2px; }
+
+    /* =====================
+       Services grid (icon blocks) - keep same
+       ===================== */
+    .services-grid{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .service-item{
+      background: #fff;
+      border-radius: 10px;
+      padding: 18px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      text-align:center;
+      border: 1px solid var(--border);
+      box-shadow: var(--soft-shadow-2);
+      min-height: 140px;
+    }
+
+    .service-icon{
+      width:64px;
+      height:64px;
+      border-radius: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg, rgba(10,102,209,0.06), rgba(6,59,107,0.03));
+      color: var(--blue-2);
+      font-size: 1.4rem;
+    }
+
+    .service-label{ font-weight:600; color: #122034; font-size: 0.98rem; }
+
+    /* =====================
+       Sample work gallery: AI-generated placeholders
+       ===================== */
+    .samples-grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .sample-card{
+      border-radius:10px;
+      overflow:hidden;
+      border:1px solid var(--border);
+      background:#fff;
+      box-shadow: var(--soft-shadow-2);
+      display:flex;
+      flex-direction: column;
+    }
+
+    /* All sample images use consistent aspect ratio and styled as requested */
+    .sample-card img{
+      width:100%;
+      height:160px;
+      object-fit:cover;
+      display:block;
+      /* subtle rounding and shadow handled by card container; keep image crisp */
+      background: #f5f8fb;
+    }
+
+    .sample-card .sample-body{
+      padding:14px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .sample-card .sample-title{ font-weight:600; color:#122034; }
+    .sample-card .sample-sub{ color:var(--muted); font-size:0.9rem; }
+
+    /* small class for explicitly-styled AI images (optional) */
+    .ai-image{
+      border-radius: 6px;
+      /* subtle drop shadow on image itself */
+      box-shadow: 0 6px 18px rgba(12,40,80,0.06);
+    }
+
+    /* =====================
+       Why Choose Us (circular icons)
+       ===================== */
+    .why-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 16px; align-items:center; }
+    .why-item{
+      display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px; padding:18px;
+      background:#fff; border:1px solid var(--border); border-radius:10px; box-shadow: var(--soft-shadow-2);
+    }
+    .why-icon{ width:84px; height:84px; border-radius:50%;
+      background: linear-gradient(180deg, rgba(10,102,209,0.06), rgba(6,59,107,0.02));
+      display:flex; align-items:center; justify-content:center; color:var(--blue-2); font-size:1.6rem; }
+    .why-title{ font-weight:700; color:#122034; font-size:1rem; }
+    .why-desc{ color:var(--muted); font-size:0.95rem; }
+
+    /* =====================
+       Contact section (icons already present)
+       ===================== */
+    .contact-card{
+      background:#fff; border-radius:12px; padding: 22px; text-align:center;
+      border:1px solid var(--border); box-shadow: var(--soft-shadow-2);
+    }
+
+    .whatsapp-btn{
+      display:inline-flex; align-items:center; gap:12px;
+      background: linear-gradient(180deg, #28d862, #14b54a);
+      color:#fff; padding:14px 20px; border-radius:12px; font-weight:700; text-decoration:none;
+      box-shadow: 0 10px 30px rgba(20,181,74,0.14);
+    }
+
+    .contact-list{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      align-items:center;
+      margin-top:16px;
+    }
+
+    .contact-row{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      background: #fafcfe;
+      padding:10px 14px;
+      border-radius:10px;
+      border:1px solid var(--border);
+      min-width:260px;
+    }
+
+    .contact-icon{
+      width:38px; height:38px; border-radius:8px; display:flex; align-items:center; justify-content:center;
+      background: linear-gradient(180deg, rgba(10,102,209,0.06), rgba(6,59,107,0.03)); color:var(--blue-2);
+      font-size:1rem;
+      flex-shrink:0;
+    }
+
+    .contact-text{
+      text-align:left;
+      font-weight:600;
+      color:var(--text-dark);
+      font-size:0.95rem;
+    }
+
+    .contact-sub{
+      display:block; font-weight:400; color:var(--muted); font-size:0.88rem; margin-top:2px;
+    }
+
+    footer.site-footer{
+      margin-top: 16px; padding: 14px 18px; text-align:center; background:#f3f6fb; color:var(--muted);
+      border-radius:8px; font-size:0.95rem;
+    }
+
+    /* =====================
+       Responsive rules (keep layout & spacing same)
+       ===================== */
+    @media (min-width: 700px){
+      .hero{ grid-template-columns: 1fr 420px; align-items:center; gap:30px; }
+      .hero .title{ text-align:left; }
+      .hero .cta{ justify-content:flex-start; }
+
+      .services-grid{ grid-template-columns: repeat(4, 1fr); }
+      .samples-grid{ grid-template-columns: repeat(4, 1fr); }
+      .why-grid{ grid-template-columns: repeat(3, 1fr); }
+      .contact-list{ flex-direction:row; }
+      section { margin-bottom: 32px; }
+    }
+
+    @media (min-width: 1000px){
+      .hero{ padding: 28px 18px; }
+      .hero-wrap{ padding:84px 0; margin-bottom:36px; }
+      .sample-card img{ height: 160px; }
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .whatsapp-btn:focus, .btn-contact:focus { outline: 3px solid rgba(255,255,255,0.18); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <!-- HERO with AI-generated professional background (dark overlay applied) -->
+  <header class="hero-wrap" role="banner" aria-label="Hero section">
+    <div class="page" role="document">
+      <div class="hero">
+        <div class="title" aria-hidden="false">
+          <h1 id="site-title">Ansari Business Support</h1>
+          <p class="lead">Accounting, GST &amp; AI-Powered Digital Support</p>
+          <p class="small">Managed by Zaid Ansari</p>
+
+          <div class="cta" role="navigation" aria-label="Primary actions">
+            <a class="btn btn-contact" href="mailto:mdzaidaliansari@gmail.com">Contact Me</a>
+            <a class="btn btn-secondary" href="tel:+917086170734">Call: +91 7086170734</a>
+          </div>
+        </div>
+
+        <aside class="card" aria-label="Contact summary" style="min-width:280px;">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:56px;height:56px;border-radius:8px;background:#eef6ff;display:flex;align-items:center;justify-content:center;color:var(--blue-2);font-size:1.45rem;">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <div>
+              <div style="font-weight:700;color:#122034">Professional Accounting &amp; AI Support</div>
+              <div style="color:var(--muted);font-size:0.92rem;margin-top:4px">Reliable remote support for CA offices &amp; small businesses</div>
+            </div>
+          </div>
+
+          <div style="height:10px"></div>
+          <div style="display:flex;gap:8px;align-items:center;justify-content:flex-start;margin-top:8px;">
+            <a class="btn" href="https://wa.me/917086170734" style="background:#effff6;color:var(--blue-2);border-radius:8px;padding:8px 10px;border:1px solid #e6f6ec;font-weight:700" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp" style="color:var(--whatsapp)"></i> WhatsApp
+            </a>
+            <a class="btn" href="mailto:mdzaidaliansari@gmail.com" style="background:#f3f6fb;color:var(--blue-2);border-radius:8px;padding:8px 10px;border:1px solid var(--border);">Email</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </header>
+
+  <main class="page" role="main">
+    <!-- WHAT I DO -->
+    <section aria-labelledby="what-i-do">
+      <div class="section-head">
+        <h2 id="what-i-do">What I Do</h2>
+        <p>Premium accounting &amp; digital services tailored for small businesses</p>
+      </div>
+
+      <div class="card" role="region" aria-label="Services">
+        <div class="services-grid" role="list">
+          <div class="service-item" role="listitem" aria-label="GST and Bank Reconciliation">
+            <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+            <div class="service-label">GST &amp; Bank Reconciliation</div>
+          </div>
+
+          <div class="service-item" role="listitem" aria-label="Excel and AI Reports">
+            <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-chart-line"></i></div>
+            <div class="service-label">Excel &amp; AI Reports</div>
+          </div>
+
+          <div class="service-item" role="listitem" aria-label="Google Business Setup">
+            <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-globe"></i></div>
+            <div class="service-label">Google Business Setup</div>
+          </div>
+
+          <div class="service-item" role="listitem" aria-label="Social Media Marketing">
+            <div class="service-icon" aria-hidden="true"><i class="fa-solid fa-bullhorn"></i></div>
+            <div class="service-label">Social Media Marketing</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SAMPLE WORK with AI-generated placeholder images -->
+    <section aria-labelledby="sample-work">
+      <div class="section-head">
+        <h2 id="sample-work">Sample Work</h2>
+        <p>Representative examples — all AI-generated placeholder images (dummy)</p>
+      </div>
+
+      <div class="card" role="region" aria-label="Sample work gallery">
+        <div class="samples-grid" role="list">
+          <!-- Image 1: GST Report (AI-generated spreadsheet mockup) -->
+          <figure class="sample-card" role="listitem" aria-label="GST Report (AI placeholder)">
+            <img
+              class="ai-image"
+              src="https://placehold.co/1200x800/ffffff/0b2f4a/png?text=AI%20Generated%20GST%20Report%20%28Dummy%20Spreadsheet%29"
+              alt="AI-generated GST report placeholder (dummy spreadsheet)">
+            <figcaption class="sample-body">
+              <div>
+                <div class="sample-title">GST Report</div>
+                <div class="sample-sub">AI-generated spreadsheet mockup (dummy data)</div>
+              </div>
+              <div style="color:var(--muted);font-size:0.9rem">Sample</div>
+            </figcaption>
+          </figure>
+
+          <!-- Image 2: Bank Reconciliation (AI-generated spreadsheet mockup) -->
+          <figure class="sample-card" role="listitem" aria-label="Bank Reconciliation (AI placeholder)">
+            <img
+              class="ai-image"
+              src="https://placehold.co/1200x800/f7fbff/0b2f4a/png?text=AI%20Generated%20Bank%20Reconciliation%20%28Dummy%29"
+              alt="AI-generated bank reconciliation placeholder (dummy spreadsheet)">
+            <figcaption class="sample-body">
+              <div>
+                <div class="sample-title">Bank Reconciliation</div>
+                <div class="sample-sub">AI-generated bank/spreadsheet mockup</div>
+              </div>
+              <div style="color:var(--muted);font-size:0.9rem">Sample</div>
+            </figcaption>
+          </figure>
+
+          <!-- Image 3: AI Product Photos (chair) -->
+          <figure class="sample-card" role="listitem" aria-label="AI Product Photo (Chair) placeholder">
+            <img
+              class="ai-image"
+              src="https://placehold.co/1200x800/ffffff/0b2f4a/png?text=AI%20Generated%20Product%20Photo%20%28Chair%29"
+              alt="AI-generated product photo placeholder (chair)">
+            <figcaption class="sample-body">
+              <div>
+                <div class="sample-title">AI Product Photos</div>
+                <div class="sample-sub">E-commerce style product mockup (AI placeholder)</div>
+              </div>
+              <div style="color:var(--muted);font-size:0.9rem">Sample</div>
+            </figcaption>
+          </figure>
+
+          <!-- Image 4: Social Media Post (AI-generated creative) -->
+          <figure class="sample-card" role="listitem" aria-label="Social Media Post (AI placeholder)">
+            <img
+              class="ai-image"
+              src="https://placehold.co/1200x800/fff5e6/0b2f4a/png?text=AI%20Generated%20Social%20Media%20Post%20%28Promo%29"
+              alt="AI-generated social media post placeholder (ad creative)">
+            <figcaption class="sample-body">
+              <div>
+                <div class="sample-title">Social Media Post</div>
+                <div class="sample-sub">AI-generated marketing creative (dummy)</div>
+              </div>
+              <div style="color:var(--muted);font-size:0.9rem">Sample</div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section aria-labelledby="why-choose">
+      <div class="section-head">
+        <h2 id="why-choose">Why Choose Us</h2>
+        <p>Trusted, accurate and technology-driven accounting support</p>
+      </div>
+
+      <div class="card" role="region" aria-label="Why choose us">
+        <div class="why-grid">
+          <div class="why-item" role="article" aria-label="Experienced Accountant">
+            <div class="why-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="why-title">Experienced Accountant</div>
+            <div class="why-desc">Full-time CA support with hands-on GST experience</div>
+          </div>
+
+          <div class="why-item" role="article" aria-label="AI-driven efficiency">
+            <div class="why-icon"><i class="fa-solid fa-robot"></i></div>
+            <div class="why-title">AI-Driven Efficiency</div>
+            <div class="why-desc">Faster, accurate reporting using AI tools</div>
+          </div>
+
+          <div class="why-item" role="article" aria-label="Local business focus">
+            <div class="why-icon"><i class="fa-solid fa-city"></i></div>
+            <div class="why-title">Local Business Focus</div>
+            <div class="why-desc">Reliable support tailored for CA offices &amp; local businesses</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section aria-labelledby="get-in-touch">
+      <div class="section-head">
+        <h2 id="get-in-touch">Get in Touch</h2>
+        <p>Start a conversation — quick responses and reliable support</p>
+      </div>
+
+      <div class="contact-card" role="region" aria-label="Contact">
+        <a class="whatsapp-btn" href="https://wa.me/917086170734" target="_blank" rel="noopener noreferrer" aria-label="Message Me on WhatsApp">
+          <i class="fa-brands fa-whatsapp" style="font-size:1.2rem"></i>
+          Message Me on WhatsApp
+        </a>
+
+        <div class="contact-list" role="list" aria-label="Contact information">
+          <div class="contact-row" role="listitem" aria-label="Phone">
+            <div class="contact-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></div>
+            <div>
+              <div class="contact-text"><a href="tel:+917086170734" style="color:inherit;text-decoration:none">+91 7086170734</a></div>
+              <span class="contact-sub">Phone / WhatsApp</span>
+            </div>
+          </div>
+
+          <div class="contact-row" role="listitem" aria-label="Email">
+            <div class="contact-icon" aria-hidden="true"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <div class="contact-text"><a href="mailto:mdzaidaliansari@gmail.com" style="color:inherit;text-decoration:none">mdzaidaliansari@gmail.com</a></div>
+              <span class="contact-sub">Email</span>
+            </div>
+          </div>
+
+          <div class="contact-row" role="listitem" aria-label="Address">
+            <div class="contact-icon" aria-hidden="true"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <div class="contact-text">Guwahati, VIP Road, Borbari</div>
+              <span class="contact-sub">Address</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+      © Ansari Business Support – Accounting &amp; AI Digital Services
+    </footer>
+  </main>
+
+  <!--
+    Notes:
+    - All images are AI-style dummy placeholders (placehold.co) to indicate AI-generated mockups.
+    - Hero uses a large AI-generated placeholder background with a dark blue overlay to keep text legible.
+    - Sample Work images replaced with AI-generated placeholders (GST report, bank reconciliation, product photo, social post).
+    - Image sizes/aspect ratios are consistent and responsive. Subtle shadows and rounded corners applied.
+    - No JavaScript; internal CSS only; layout, colors, spacing preserved per previous design.
+  -->
+</body>
+</html>
